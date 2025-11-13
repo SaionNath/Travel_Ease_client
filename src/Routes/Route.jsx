@@ -5,6 +5,11 @@ import Home from '../Components/Home';
 import AllVehicles from '../Components/AllVehicles';
 import Register from '../Components/Register';
 import Login from '../Components/Login';
+import Profile from '../Components/Profile';
+import PrivateRoute from './PrivateRoute';
+import AddVehicles from '../Components/AddVehicles';
+import MyVehicles from '../Components/MyVehicles';
+import MyBookings from '../Components/MyBookings';
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +32,28 @@ export const router = createBrowserRouter([
             path: 'login',
             Component: Login,
         },
+        {
+            path: "profile",
+            Component: Profile,
+        },
+        {
+            path: 'addVehicles',
+            element: <PrivateRoute>
+                <AddVehicles></AddVehicles>
+            </PrivateRoute>
+        },
+        {
+            path: "myVehicles",
+            element: <PrivateRoute>
+                <MyVehicles></MyVehicles>
+            </PrivateRoute>
+        },
+        {
+            path: "myBooking",
+            element: <PrivateRoute>
+                <MyBookings></MyBookings>
+            </PrivateRoute>
+        }
     ]
   },
 ]);

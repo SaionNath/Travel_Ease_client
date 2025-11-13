@@ -19,6 +19,13 @@ const Nav = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to = "/allvehicles">All Vehicles</NavLink></li>
+        {
+            user && <>
+            <li><NavLink to = "/addVehicles">Add Vehicles</NavLink></li>
+            <li><NavLink to = "/myVehicles">My Vehicles</NavLink></li>
+            <li><NavLink to = "/myBooking">My Bookings</NavLink></li>
+            </>
+        }
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -44,6 +51,23 @@ const Nav = () => {
             </div>
             {/* btns */}
             <div className="navbar-end">
+                {
+                    user && (
+                        <li>
+                            <NavLink to = '/profile' className= "hover:opacity-50">
+                                {user.photoURL ? (
+                                    <img 
+                                    src = {user.photoURL}
+                                    alt = "user"
+                                    className='w-10 h-10 rounded-full object-cover'
+                                    />
+                                ) : (
+                                    <RxAvatar className='text-2xl' />
+                                )}
+                            </NavLink>
+                        </li>
+                    )
+                }
                 {
                     user ?
 
