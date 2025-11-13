@@ -28,7 +28,7 @@ const Nav = () => {
         }
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-yellow-200 shadow-sm">
             {/* logo */}
             <div className="navbar-start">
                 <div className="dropdown">
@@ -74,7 +74,7 @@ const Nav = () => {
                     <p onClick={handleLogOut} className="btn mr-2 hover:btn-primary"><NavLink to = "">Log out</NavLink></p> : 
 
                     <div>
-                        <p className="btn btn-primary"><NavLink to = "/login">Login</NavLink></p>
+                        <p className="btn btn-primary mr-3"><NavLink to = "/login">Login</NavLink></p>
                         <p className="btn btn-primary"><NavLink to = "/register">Register</NavLink></p>
                     </div>   
                 }

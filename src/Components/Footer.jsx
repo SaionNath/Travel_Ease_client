@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-neutral text-neutral-content p-10">
+        <footer className="bg-yellow-200 text-black p-10">
             <div className="footer sm:footer-horizontal">
                 <aside>
                     <a className="text-xl font-bold">Travel_Ease</a>
