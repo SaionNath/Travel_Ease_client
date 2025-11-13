@@ -12,12 +12,17 @@ import MyVehicles from "../Components/MyVehicles";
 import MyBookings from "../Components/MyBookings";
 import ProductDetails from "../Components/ProductDetails";
 import UpdateVehicle from "../Components/UpdateVehicle";
+import NotFound from "../Components/NotFound";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
     children: [
+      {
+        path: "*",
+        element: <NotFound></NotFound>,
+      },
       {
         index: true,
         Component: Home,
