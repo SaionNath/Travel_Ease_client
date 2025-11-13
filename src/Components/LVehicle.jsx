@@ -15,7 +15,7 @@ const LVehicle = ({vehicle}) => {
             <div className="card-body">
                 <h2 className="card-title">{vehicleName}</h2>
                 <div className='flex items-center'>
-                    <p><span className='font-bold'>Price</span>(price per hour): ${pricePerDay}</p>
+                    <p><span className='font-bold'>Price</span>(price per day): ${pricePerDay}</p>
                     <p><span className='font-bold'>Availability</span>: {availability}</p>
                 </div>
                 <div className='flex items-center'>
