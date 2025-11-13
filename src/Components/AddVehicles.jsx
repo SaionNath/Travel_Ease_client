@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
+import useAxios from "../Hooks/useAxios";
 
 const AddVehicles = () => {
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+  const axiosInstance = useAxios();
 
   const handleAddVehicle = async (e) => {
     e.preventDefault();
@@ -25,13 +27,7 @@ const AddVehicles = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/vehicles", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(vehicleData),
-      });
-
-      const data = await res.json();
+      const { data } = await axiosInstance.post("/vehicles", vehicleData);
 
       if (data.success) {
         Swal.fire({

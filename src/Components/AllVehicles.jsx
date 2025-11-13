@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import useAxios from "../Hooks/useAxios";
 
 const AllVehicles = () => {
+    const axiosInstance = useAxios();
   const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/vehicles")
-      .then((res) => res.json())
-      .then((data) => setVehicles(data))
+    axiosInstance
+      .get("/vehicles")
+      .then((res) => setVehicles(res.data))
       .catch((err) => console.error(err));
   }, []);
 
