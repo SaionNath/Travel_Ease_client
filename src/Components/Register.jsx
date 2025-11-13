@@ -58,7 +58,25 @@ const Register = () => {
 
     const googleLogin = () => {
         loginWithGoogle()
-            .then((result) => {
+            .then(result => {
+            // console.log(result.user);
+            const newUser = {
+                name: result.user.displayName,
+                email: result.user.email,
+                Image: result.user.photoURL
+            }
+
+            fetch('http://localhost:3000/user', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newUser),
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Data after user save', data);
+            })
             setUser(result.user);
             navigate("/");
             })

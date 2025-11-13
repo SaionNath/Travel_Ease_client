@@ -10,6 +10,7 @@ import PrivateRoute from './PrivateRoute';
 import AddVehicles from '../Components/AddVehicles';
 import MyVehicles from '../Components/MyVehicles';
 import MyBookings from '../Components/MyBookings';
+import ProductDetails from '../Components/ProductDetails';
 
 export const router = createBrowserRouter([
   {
@@ -53,7 +54,12 @@ export const router = createBrowserRouter([
             element: <PrivateRoute>
                 <MyBookings></MyBookings>
             </PrivateRoute>
-        }
+        },
+        {
+        path: "product_details/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/vehicles/${params.id}`),
+        Component: ProductDetails,
+      }
     ]
   },
 ]);
