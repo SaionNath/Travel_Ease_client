@@ -1,7 +1,20 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { use } from 'react';
+import { NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const Nav = () => {
+    const {user, LogOut} = use(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        LogOut()
+        .then(() => {
+            navigate("/");
+        })
+        .catch(() => {
+            alert("Log Out failled, try again.")
+        })
+    }
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -29,10 +42,18 @@ const Nav = () => {
                 {links}
                 </ul>
             </div>
-            {/* btn */}
+            {/* btns */}
             <div className="navbar-end">
-                <p className="btn btn-primary"><NavLink to = "/login">Login</NavLink></p>
-                <p className="btn btn-primary"><NavLink to = "/register">Register</NavLink></p>
+                {
+                    user ?
+
+                    <p onClick={handleLogOut} className="btn mr-2 hover:btn-primary"><NavLink to = "">Log out</NavLink></p> : 
+
+                    <div>
+                        <p className="btn btn-primary"><NavLink to = "/login">Login</NavLink></p>
+                        <p className="btn btn-primary"><NavLink to = "/register">Register</NavLink></p>
+                    </div>   
+                }
             </div>
         </div>
     );
