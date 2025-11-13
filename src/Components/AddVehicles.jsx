@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
 
@@ -59,6 +59,10 @@ const AddVehicles = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    document.title = "Add Vehicles";
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto mt-10 p-8 bg-white shadow-lg rounded-xl">

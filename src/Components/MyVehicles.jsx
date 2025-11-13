@@ -41,6 +41,10 @@ const MyVehicles = () => {
     });
   };
 
+  useEffect(() => {
+    document.title = "My Vehicles";
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-5 text-center">My Vehicles</h2>

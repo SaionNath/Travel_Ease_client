@@ -10,7 +10,7 @@ const LVehicle = ({vehicle}) => {
                 <img
                 src={coverImage}
                 alt={vehicleName}
-                className="rounded-xl" />
+                className="w-full h-48  rounded-xl object-cover" />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{vehicleName}</h2>

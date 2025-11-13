@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LatestVehicles from './LatestVehicles';
 import Banner from './Banner';
 
@@ -6,6 +6,9 @@ import Banner from './Banner';
 const LatestVehiclesPromise = fetch('http://localhost:3000/latest_vehicles').then(res => res.json());
 
 const Home = () => {
+    useEffect(() => {
+    document.title = "Home";
+  }, []);
     return (
         <div>
             <Banner></Banner>

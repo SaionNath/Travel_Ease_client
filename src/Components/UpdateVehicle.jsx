@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
@@ -41,6 +41,10 @@ const UpdateVehicle = () => {
         Swal.fire("Error", "Something went wrong.", "error");
         }
     };
+
+    useEffect(() => {
+    document.title = "Update Vehicles";
+  }, []);
 
   return (
         <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">

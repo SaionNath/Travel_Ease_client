@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
@@ -76,6 +76,10 @@ const ProductDetails = () => {
       });
     }
   };
+
+  useEffect(() => {
+    document.title = "Vehicles Details";
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto mt-10 p-6 shadow-lg rounded-xl bg-white mb-3">
