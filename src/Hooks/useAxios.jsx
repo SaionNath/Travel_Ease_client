@@ -7,7 +7,7 @@ const useAxios = () => {
 
   // Create an Axios instance
   const axiosInstance = axios.create({
-    baseURL: "https://travel-ease-server-ten.vercel.app",
+    baseURL: "https://travel-ease-server-otpwqgljp-saions-projects-c6f93d3f.vercel.app",
     headers: {
       "Content-Type": "application/json",
     },
