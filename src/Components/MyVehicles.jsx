@@ -9,7 +9,7 @@ const MyVehicles = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://travel-ease-server-otpwqgljp-saions-projects-c6f93d3f.vercel.app/my_vehicles?email=${user.email}`)
+      fetch(`https://travel-ease-server-saions-projects-c6f93d3f.vercel.app/my_vehicles?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setVehicles(data));
     }
@@ -26,7 +26,7 @@ const MyVehicles = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await fetch(`https://travel-ease-server-otpwqgljp-saions-projects-c6f93d3f.vercel.app/vehicles/${id}`, {
+        const res = await fetch(`https://travel-ease-server-saions-projects-c6f93d3f.vercel.app/vehicles/${id}`, {
           method: "DELETE",
         });
         const data = await res.json();
