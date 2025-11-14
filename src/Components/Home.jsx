@@ -3,7 +3,7 @@ import LatestVehicles from './LatestVehicles';
 import Banner from './Banner';
 
 
-const LatestVehiclesPromise = fetch('http://localhost:3000/latest_vehicles').then(res => res.json());
+const LatestVehiclesPromise = fetch('https://travel-ease-server-ten.vercel.app/latest_vehicles').then(res => res.json());
 
 const Home = () => {
     useEffect(() => {

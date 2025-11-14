@@ -43,7 +43,7 @@ const ProductDetails = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/bookings", {
+      const res = await fetch("https://travel-ease-server-ten.vercel.app/bookings", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
       {
         path: "product_details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/vehicles/${params.id}`),
+          fetch(`https://travel-ease-server-ten.vercel.app/vehicles/${params.id}`),
         element: (
           <PrivateRoute>
             <ProductDetails></ProductDetails>
@@ -80,7 +80,7 @@ export const router = createBrowserRouter([
       {
         path: "update_vehicle/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/vehicles/${params.id}`),
+          fetch(`https://travel-ease-server-ten.vercel.app/vehicles/${params.id}`),
         element: (
           <PrivateRoute>
             <UpdateVehicle />

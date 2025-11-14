@@ -1,11 +1,13 @@
 import React, { use, useEffect, } from 'react';
 import { AuthContext } from '../Context/AuthContext';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 const Login = () => {
     const { LogIn, loginWithGoogle, setUser} = use(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogIn = (e) => {
         e.preventDefault();
@@ -15,7 +17,7 @@ const Login = () => {
         LogIn(Email, Password)
         .then(() => {
         // console.log(result.user);
-        navigate("/")
+        navigate(from, { replace: true });
         })
         .catch((error) => {
             alert(error.message);
@@ -26,7 +28,7 @@ const Login = () => {
       loginWithGoogle()
         .then((result) => {
           setUser(result.user);
-          navigate("/");
+          navigate(from, { replace: true });
         })
         .catch((err) => alert(err.message));
     };
