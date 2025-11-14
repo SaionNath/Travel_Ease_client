@@ -1,6 +1,6 @@
 # Travel_Ease - vehicle rental website
 
-🌐 Live Site Link => https://travel-ease-a32b9.firebaseapp.com/
+🌐 Live Site Link => https://travel-ease-a32b9.web.app/
 
 ♦ About the website
 It is a full-featured vehicle rental platform where users can search for vehicles, book rentals and manage

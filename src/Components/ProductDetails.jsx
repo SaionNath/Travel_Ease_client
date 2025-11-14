@@ -43,7 +43,7 @@ const ProductDetails = () => {
     };
 
     try {
-      const res = await fetch("https://travel-ease-server-saions-projects-c6f93d3f.vercel.app/bookings", {
+      const res = await fetch("https://travel-ease-server-ten.vercel.app/bookings", {
         method: "POST",
         headers: {
           "content-type": "application/json",
