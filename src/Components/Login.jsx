@@ -1,6 +1,7 @@
 import React, { use, useEffect, } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { Link, useLocation, useNavigate } from 'react-router';
+import Swal from "sweetalert2";
 
 const Login = () => {
     const { LogIn, loginWithGoogle, setUser} = use(AuthContext);
@@ -20,7 +21,11 @@ const Login = () => {
         navigate(from, { replace: true });
         })
         .catch((error) => {
-            alert(error.message);
+            Swal.fire({
+                icon: "error",
+                title: "Login Failed",
+                text: error.message,
+            });
         });
     };
 
@@ -30,7 +35,13 @@ const Login = () => {
           setUser(result.user);
           navigate(from, { replace: true });
         })
-        .catch((err) => alert(err.message));
+        .catch((err) => 
+            Swal.fire({
+                icon: "error",
+                title: "Login Failed",
+                text: err.message,
+            })
+        );
     };
 
     useEffect(() => {
